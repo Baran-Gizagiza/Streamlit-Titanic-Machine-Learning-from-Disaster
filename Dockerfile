@@ -20,5 +20,4 @@ WORKDIR /opt/app
 RUN pip3 install --upgrade -r requirements.txt
 COPY . /opt/app
 WORKDIR /
-RUN jupyter labextension install jupyterlab-plotly@4.14.3 --no-build
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
