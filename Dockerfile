@@ -20,4 +20,7 @@ WORKDIR /opt/app
 RUN pip3 install --upgrade -r requirements.txt
 COPY . /opt/app
 WORKDIR /
+
+EXPOSE 8501
+
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
