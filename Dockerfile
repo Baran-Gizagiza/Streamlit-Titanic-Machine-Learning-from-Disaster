@@ -21,4 +21,4 @@ RUN pip3 install --upgrade -r requirements.txt
 COPY . /opt/app
 WORKDIR /
 
-CMD streamlit run app.py
+CMD streamlit run .work/streamlit/python/main.py
