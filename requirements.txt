@@ -1,10 +1,10 @@
 pip
 pandas
 numpy
+matplotlib
+seaborn
 streamlit
 scikit-learn
 optuna
 xgboost
 lightgbm
-jupyterlab==2.0.1
-tornado
