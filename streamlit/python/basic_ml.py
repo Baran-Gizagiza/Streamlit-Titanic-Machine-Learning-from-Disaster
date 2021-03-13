@@ -1,4 +1,5 @@
-import main
+""" basic_ml.py """
+
 import pandas as pd
 import seaborn as sns; sns.set(font='DejaVu Sans')
 import matplotlib.pyplot as plt
@@ -8,12 +9,12 @@ from sklearn.linear_model import LogisticRegression
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
 from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
 
 file_name = 'basic_rev001'
 
 class Trial_ML():
-    def rfc(slef):
-        X_train, y_train = main.X_train, main.y_train
+    def rfc(self, X_train, y_train):
         rfc = RandomForestClassifier(random_state=0)
         rfc.fit(X_train, y_train)
         # print('RandomForestClassifier')
@@ -22,8 +23,7 @@ class Trial_ML():
         return rfc
 
 
-    def xgb(slef):
-        X_train, y_train = main.X_train, main.y_train
+    def xgb(self, X_train, y_train):
         xgb = XGBClassifier(random_state=0, use_label_encoder =False)
         xgb.fit(X_train, y_train)
         # print('XGBClassifier')
@@ -32,8 +32,7 @@ class Trial_ML():
         return xgb
 
 
-    def lgb(slef):
-        X_train, y_train = main.X_train, main.y_train
+    def lgb(self, X_train, y_train):
         lgb = LGBMClassifier(random_state=0)
         lgb.fit(X_train, y_train)
         # print('LGBMClassifier')
@@ -42,8 +41,7 @@ class Trial_ML():
         return lgb
 
 
-    def lr(slef):
-        X_train, y_train = main.X_train, main.y_train
+    def lr(self, X_train, y_train):
         lr = LogisticRegression(random_state=0)
         lr.fit(X_train, y_train)
         # print('LogisticRegression')
@@ -52,8 +50,7 @@ class Trial_ML():
         return lr
 
 
-    def svc(slef):
-        X_train, y_train = main.X_train, main.y_train
+    def svc(self, X_train, y_train):
         svc = SVC(random_state=0)
         svc.fit(X_train, y_train)
         # print('SVC')
@@ -62,14 +59,12 @@ class Trial_ML():
         return svc
 
 
-    def base_ml(self):
-        X_train, X_test, y_train, y_test = main.X_train, main.X_test, main.y_train, main.y_test
-
-        rfc = self.rfc()
-        xgb = self.xgb()
-        lgb = self.lgb()
-        lr = self.lr()
-        svc = self.svc()
+    def base_ml(self, X_train, X_test, y_train, y_test):
+        rfc = self.rfc(X_train, y_train)
+        xgb = self.xgb(X_train, y_train)
+        lgb = self.lgb(X_train, y_train)
+        lr = self.lr(X_train, y_train)
+        svc = self.svc(X_train, y_train)
 
         st.success('Finishied Machine learning')
 
@@ -97,8 +92,8 @@ class Trial_ML():
         return rfc, xgb, lgb, lr, svc
 
     def output_file(self, *arg):
-        test_feature = main.test_feature
-        test_raw = main.test_raw
+        test_feature = sa.test_feature
+        test_raw = sa.test_raw
         pred_1 = {
             'rfc': rfc.predict(test_feature),
             'xgb': xgb.predict(test_feature),

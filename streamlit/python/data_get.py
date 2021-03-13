@@ -2,6 +2,7 @@
 import pandas as pd
 import streamlit as st
 
+@st.cache
 class Data_Get():
     def read_data(self):
         train_raw = pd.read_csv('../data/train.csv') #学習データ

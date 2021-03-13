@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 
+@st.cache
 class Sidebar_value():
     def bins_value(self):
         bins = st.sidebar.number_input(

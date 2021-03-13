@@ -1,6 +1,5 @@
 """ optuna_ml.py """
 import optuna
-import main
 import pandas as pd
 import streamlit as st
 import warnings

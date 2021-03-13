@@ -5,7 +5,7 @@ import streamlit as st
 import seaborn as sns; sns.set(font='DejaVu Sans')
 import matplotlib.pyplot as plt
 
-# @st.cache
+@st.cache
 class Preprocessing():
     def name_process(self, alldata_sum):
         st.write("(3)-1. Name")

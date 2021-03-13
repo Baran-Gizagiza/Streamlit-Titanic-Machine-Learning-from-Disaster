@@ -5,6 +5,7 @@ import streamlit as st
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
+#@st.cache
 class Create_Train_Test():
     def label_encoder(self, alldata_sum):
         # カテゴリ特徴量についてlabel encoding
