@@ -19,6 +19,6 @@ COPY requirements.txt /opt/app/requirements.txt
 WORKDIR /opt/app
 RUN pip3 install --upgrade -r requirements.txt
 COPY . /opt/app
-WORKDIR /
+WORKDIR /work/streamlit/python
 
-CMD streamlit run .work/streamlit/python/main.py
+CMD streamlit run main.py
