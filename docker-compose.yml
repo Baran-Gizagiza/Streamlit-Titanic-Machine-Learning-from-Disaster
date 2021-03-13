@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-        - '5555:8888'
-    container_name: datascience_app
+        - '8501:8501'
+    container_name: streamlit_app
     volumes:
       - '.:/work'
     tty: true
