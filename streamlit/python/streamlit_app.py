@@ -56,11 +56,3 @@ if analysis:
 
     if file_output == 'Yes':
         Trial_ML().output_file(output_name, rfc, xgb, lgb, lr, svc)
-
-
-    # st.subheader('(6) Machine Learning(Optuna)')
-
-    # rfc_best, xgb_best, lgb_best, lr_best, svc_best = om.optuna_ml()
-
-    # if file_output == 'Yes':
-    #     om.output_file(rfc_best, xgb_best, lgb_best, lr_best, svc_best)
