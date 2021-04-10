@@ -1,4 +1,4 @@
 /.ipynb_checkpoints
-/output
+*.csv
 titanic.ipynb
 __pycache__
