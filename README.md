@@ -14,7 +14,15 @@ $ docker-compose up -d --build
 ```
 
 # How to run streamlit:
-Move to directory with streamlit_app.py and please enter below command in your treminal.
+Already streamlit server operating by "Dockerfile"
+But you want to run the streamlit, move to directory with streamlit_app.py and please enter below command in your terminal.
 ```
 $ streamlit run streamlit_app.py
+```
+
+# How to start streamlit app on Web
+You can access by using below address.
+
+```
+http://<EC2 public IP address>:8501
 ```
