@@ -36,6 +36,15 @@ class Sidebar_value():
         return file_output
 
 
+    def file_output_name(self):
+        output_name = st.sidebar.text_input(
+            'Please enter output name',
+            value='001',
+            max_chars=100
+            )
+        return output_name
+
+
     def analysis_value(self):
         analysis = st.sidebar.button(
             'Analyze',

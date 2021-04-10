@@ -16,6 +16,7 @@ bins = Sidebar_value().bins_value()
 solution = Sidebar_value().solution_value()
 test_size = Sidebar_value().test_size_value()
 file_output = Sidebar_value().file_output_value()
+output_name = Sidebar_value().file_output_name()
 analysis = Sidebar_value().analysis_value()
 
 
@@ -54,7 +55,7 @@ if analysis:
     rfc, xgb, lgb, lr, svc = Trial_ML().base_ml(X_train, X_test, y_train, y_test)
 
     if file_output == 'Yes':
-        Trial_ML().output_file(rfc, xgb, lgb, lr, svc)
+        Trial_ML().output_file(output_name, rfc, xgb, lgb, lr, svc)
 
 
     # st.subheader('(6) Machine Learning(Optuna)')

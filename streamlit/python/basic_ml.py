@@ -11,7 +11,6 @@ from lightgbm import LGBMClassifier
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 
-file_name = 'basic_rev001'
 
 class Trial_ML():
     def rfc(self, X_train, y_train):
@@ -91,7 +90,7 @@ class Trial_ML():
 
         return rfc, xgb, lgb, lr, svc
 
-    def output_file(self, *arg):
+    def output_file(self, output, *arg):
         test_feature = sa.test_feature
         test_raw = sa.test_raw
         pred_1 = {
@@ -109,4 +108,4 @@ class Trial_ML():
                     pd.DataFrame(value, columns=['Survived'])
                 ],
                 axis=1
-            ).to_csv('../output/submittion_{0}_{1}.csv'.format(key, file_name), index=False)
+            ).to_csv('../output/submittion_{0}_{1}.csv'.format(key, output), index=False)
